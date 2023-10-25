@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSE 121b | W05: Programming Tasks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/project.css">
+</head>
+<body>
+  <nav>
+    <ul id="menu">
+      <li><a id="toggleMenu">&equiv;</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="w01-task.html">W1 Task</a></li>
+      <li><a href="w03-task.html">W3 Task</a></li>
+      <li><a href="w04-task.html">W4 Task</a></li>
+      <li><a href="w05-task.html" class="active">W5 Task</a></li>
+      <li><a href="project.html">Project</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>CSE121b Final Project</h1>
+    <h1>USD to CAD Fuel Cost Converter</h1>
+    <section id="volume">
+        <label for="liters">Canadian Liters: </label>
+        <input id="liters" type="number" name="liters"> 
+        <label for="gallons">Fuel in US Gallons: </label>
+        <input id="gallons" type="text" readonly/>   
+    </section>
+    <section id="currency">
+        <label for="cad">Canadian Dollars ($)/L: </label>
+        <input id="cad" type="number" name="cad">
+        <label for="usd">Cost in US Dollars ($)/Gal: </label>
+        <input id="usd" type="text" name="usd" readonly>
+    </section>
+    <section id="total">
+        <label for="totalCAD">Total in Canadian Dollars ($): </label>
+        <input id="totalCAD" type="text" name="totalUSD" readonly>
+        <label for="totalUSD">Total in US Dollars ($): </label>
+        <input id="totalUSD" type="text" name="totalUSD" readonly>
+    </section>
+    <div class="button">
+        <button id="compute">Compute Conversion</button>
+    </div>
+  </main>
+  <footer>
+    &copy;<span id="year"></span> William Keel | Project | CSE 121b
+  </footer>
+  <script src="scripts/main.js"></script>
+  <script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+  </script>
+  <script src="scripts/project.js" type="module"></script>
+</body>
+
+</html>

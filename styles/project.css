@@ -1,0 +1,17 @@
+#volume, #currency, #total {
+    display: grid;
+    grid-template-columns: 1fr 150px 1fr 150px;
+}
+
+#volume > *, #currency > *, #total > * {
+    padding: 15px;
+}
+
+#compute {
+    padding: 20px;
+}
+
+.button {
+    display: flex;
+    align-self: center;
+}
