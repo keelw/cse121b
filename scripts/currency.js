@@ -1,3 +1,4 @@
+// global variables
 let countries = [];
 const cadBox = document.querySelector("#cad");
 const usdBox = document.querySelector("#usd");
@@ -17,21 +18,24 @@ async function getConversion(cad) {
     }
 }
 
+// get the data from the api into an array
 function convertData(data) {
     for (let country in data.cad) {
         countries.push(data.cad[country]);
     }
 
-    //required array function here****
+    //****required array function here****
     let rate = countries.at(474);
     return rate;
 }
 
+// perform the calculations specific to $/gal
 function calculate(rate, cad) {
     usd = Math.round((cad * rate * 3.78541) * 100) / 100;
     usdBox.setAttribute("value", `${usd}`);
 }
 
+// perform other calculations required for the remaining fields
 function getTotals(cad, liters, gallons) {
     let totalCAD = Math.round((cad * liters) * 100) / 100;
     cadTotal.setAttribute("value", `${totalCAD}`);
@@ -40,4 +44,5 @@ function getTotals(cad, liters, gallons) {
     usdTotal.setAttribute("value", `${totalUSD}`);
 }
 
+// export necessary functions from the module
 export {getConversion, getTotals};
