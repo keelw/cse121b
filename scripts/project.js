@@ -8,16 +8,18 @@ const button = document.querySelector("#compute");
 
 // listen to the button
 button.addEventListener("click", () => {
+    cad = cadBox.value;
+    usd = usdBox.value;
+    liters = litersBox.value;
     // convert and display the currency when the user hits the button
-    getConversion(cadBox.value);
-    let dollarsCAD = cadBox.value;
+    getConversion(cad);
     
     // convert and display the volume when the user hits the button
-    let gallons = convertVolume(litersBox.value);
+    let gallons = convertVolume(liters);
     gallonsBox.setAttribute("value", `${gallons}`);
 
     // convert the total
-    getTotals(cadBox.value, litersBox.value, usdBox.value, gallons)
+    getTotals(cad, liters, gallons)
 });
 
 function convertVolume(liters) {

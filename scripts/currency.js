@@ -3,6 +3,7 @@ const cadBox = document.querySelector("#cad");
 const usdBox = document.querySelector("#usd");
 const usdTotal = document.querySelector("#totalUSD");
 const cadTotal = document.querySelector("#totalCAD"); 
+let usd;
 
 /* async getTemples Function using fetch()*/
 async function getConversion(cad) {
@@ -31,11 +32,11 @@ function calculate(rate, cad) {
     usdBox.setAttribute("value", `${usd}`);
 }
 
-function getTotals(cad, liters, dollars, gallons) {
+function getTotals(cad, liters, gallons) {
     let totalCAD = Math.round((cad * liters) * 100) / 100;
     cadTotal.setAttribute("value", `${totalCAD}`);
 
-    let totalUSD = Math.round((dollars * gallons) * 100) / 100;
+    let totalUSD = Math.round((usd * gallons) * 100) / 100;
     usdTotal.setAttribute("value", `${totalUSD}`);
 }
 
